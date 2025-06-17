@@ -169,19 +169,9 @@ This project is a full application of CCNA fundamentals in a real-world home lab
 
 ---
 
-## 7. **Suggestions for GitHub Repo**
 
-- Add this document as `README.md`
-- Include device configs as separate `.txt` files:
-  - `router_config.txt`
-  - `switch_config.txt`
-  - `ap_config.txt`
-- Use diagrams (ASCII or Visio) to illustrate the topology
-- Include troubleshooting logs or `show` command outputs
 
----
-
-## 8. **Conclusion**
+## 7. **Conclusion**
 
 This guide provides a solid foundation for using CCNA knowledge in a home environment. By manually configuring devices and troubleshooting through trial and error, you build real confidence and understanding of networking concepts.
 
