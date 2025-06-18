@@ -9,7 +9,7 @@ Set up a working home network using Cisco equipment, demonstrating practical CCN
 ---
 
 ## 1. **Topology Overview**
-
+![image alt](https://github.com/leomarqueslima/ccnahomelab/blob/743ba55e36a51e2322a847b01aeee0bb51101c04/topology.png)
 ```
 [Home Modem]
     |
