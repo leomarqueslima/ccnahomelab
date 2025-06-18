@@ -1,0 +1,24 @@
+interface GigabitEthernet0
+ description Connected to Home Modem
+ ip address dhcp
+ ip nat outside
+ no shutdown
+
+interface Vlan30
+ ip address 192.168.30.1 255.255.255.0
+ ip nat inside
+ no shutdown
+
+interface FastEthernet1
+ switchport mode trunk
+ switchport trunk allowed vlan 1,30,1002-1005
+
+ip dhcp pool VLAN30-POOL
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ dns-server 8.8.8.8
+
+ip access-list standard NAT-LAN
+ permit 192.168.30.0 0.0.0.255
+
+ip nat inside source list NAT-LAN interface GigabitEthernet0 overload
