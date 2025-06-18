@@ -65,7 +65,7 @@ interface FastEthernet1
  switchport trunk allowed vlan 1,30,1002-1005
 ```
 
-> **Issue Encountered:** Command rejected: Bad VLAN allowed list. Required all default VLANs. **Fix:** Included `1,30,1002-1005` in trunk allowed VLANs.
+> **Issue Encountered:** Command rejected: Bad VLAN allowed list. Required all default VLANs. This took me a while to figure it out. It is because these ports of the router behave like switchports. So, if you want to use trunk ports you have to include all vlans. **Fix:** Included `1,30,1002-1005` in trunk allowed VLANs.
 
 ---
 
