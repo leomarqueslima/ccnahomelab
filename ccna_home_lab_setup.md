@@ -1,6 +1,6 @@
 # Practical CCNA Home Lab Setup: Internet Access via Cisco Devices
 
-This document details the step-by-step configuration of a home lab using Cisco devices, connecting a Cisco 819 router directly to a home modem for internet access, a Catalyst 3650 switch, and a Cisco AIR-CAP1702I-B-K9 access point. It includes the configurations, common errors encountered, and the solutions applied.
+Basic configuration of a homelab to get internet connectivty at home using Cisco equipment. The goal of this repository is to document my journey in applying the knowledge gained during my studies for the CCNA exam in a real lab. I faced several challenges in setting up this basic topology. This showed me that knowing the theory and doing packet tracer labs, although essential, are not enough. For example, I used a Cisco Router 819. It only has one Layer 3 routable port - GigabitEthernet 0. This is the port connected to the modem. Therefore, Subinterfaces ROA (Router on a stick) connection to the switches would not work for this configuration. SVIs were the solution. Also, CCNA only deals with APs configurations via an WLC GUI interface. Autonomous AP configuration are not covered in the CCNA material. So, I had to learn how to configre an Autonomous AP.
 
 ## Objective
 
@@ -136,10 +136,10 @@ dot11 ssid WeWorshipThor
 ```
 
 > **Issue Encountered:** SSID `WeWorshipThor` not visible **Fixes Applied:**
-
+> 
 - Confirmed radio was up with `no shutdown`
 - Configured encryption for vlan 30
-- Ensured `mbssid` and `guest-mode` enabled
+- Ensured `mbssid` and `guest-mode` enabled - I think these two were the main thing why clients could not see the SSID
 
 > **Issue Encountered:** Clients stuck on connecting **Fix:** Set encryption to `aes-ccm` on Dot11Radio0 and vlan 30 explicitly
 
@@ -159,13 +159,13 @@ dot11 ssid WeWorshipThor
 ## 6. **Lessons Learned and Practical CCNA Applications**
 
 - VLAN trunking with switchports and subinterfaces
-- Interfacing router-on-a-stick model using non-routable switchports
+- Interfacing router-on-a-stick model using non-routable switchports and SVIs
 - DHCP and NAT configuration
 - Troubleshooting VLAN and SSID issues
 - Use of BVI interfaces in autonomous APs
 - Understanding dot1Q tagging and subinterfaces
 
-This project is a full application of CCNA fundamentals in a real-world home lab scenario.
+This project used many of the CCNA fundamentals in a real-world home lab scenario. It is still small and it will be further expanded.
 
 ---
 
