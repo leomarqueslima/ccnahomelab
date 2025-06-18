@@ -1,1 +1,32 @@
+dot11 ssid WeWorshipThor
+ vlan 30
+ authentication open
+ authentication key-management wpa
+ guest-mode
+ wpa-psk ascii 7 097F5B191C1724170819162F7A767B
+
+interface Dot11Radio0
+ encryption mode ciphers aes-ccm
+ encryption vlan 30 mode ciphers aes-ccm
+ ssid CiscoWiFi
+ ssid WeWorshipThor
+ mbssid
+ station-role root
+ antenna gain 0
+ stbc
+ no shutdown
+
+interface Dot11Radio0.30
+ encapsulation dot1Q 30
+ bridge-group 30
+
+interface GigabitEthernet0.30
+ encapsulation dot1Q 30
+ ip address dhcp
+ bridge-group 30
+ bridge-group 30 spanning-disabled
+ no bridge-group 30 source-learning
+
+interface BVI30
+ ip address dhcp
 
